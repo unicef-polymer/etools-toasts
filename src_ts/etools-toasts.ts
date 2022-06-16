@@ -58,7 +58,7 @@ export class EtoolsToasts extends LitElement {
           padding: 10px;
           bottom: 0;
           left: 0;
-          z-index: 10;
+          z-index: 104;
         }
       `
     ];
