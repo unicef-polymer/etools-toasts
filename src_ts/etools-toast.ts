@@ -9,7 +9,7 @@ export type ToastOptions = {
 
 export class EtoolsToast extends LitElement {
   public toastOptions!: ToastOptions;
-  public defaultDuration = 5000;
+  public defaultDuration = 10000;
 
   render() {
     return html`
@@ -27,9 +27,7 @@ export class EtoolsToast extends LitElement {
       this.classList.add('toast-multi-line');
     }
 
-    if (!this.toastOptions?.showCloseBtn) {
-      setTimeout(() => this.closeToast(), this.toastOptions?.duration || this.defaultDuration);
-    }
+    setTimeout(() => this.closeToast(), this.toastOptions?.duration || this.defaultDuration);
   }
 
   public closeToast() {
