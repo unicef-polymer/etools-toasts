@@ -9,7 +9,7 @@ export type ToastOptions = {
 
 export class EtoolsToast extends LitElement {
   public toastOptions!: ToastOptions;
-  public defaultDuration = 10000;
+  public defaultDuration = 30000;
 
   render() {
     return html`
