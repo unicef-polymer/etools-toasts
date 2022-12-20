@@ -24,6 +24,12 @@ export class EtoolsToasts extends LitElement {
     super.connectedCallback();
     // @ts-ignore
     document.body.addEventListener('toast', (event: CustomEvent<ToastOptions>) => this.queueToast(event));
+    document.body.addEventListener('close-toasts', () => this.closeAllToasts());
+  }
+
+  closeAllToasts() {
+    this.shadowRoot?.querySelectorAll<EtoolsToast>('etools-toast').forEach((t: EtoolsToast) => t.closeToast());
+    this.toastQueue = [];
   }
 
   public queueToast({detail}: CustomEvent<ToastOptions>) {

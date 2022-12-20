@@ -3,7 +3,7 @@ import {LitElement, html, CSSResultArray, css} from 'lit-element';
 
 export type ToastOptions = {
   text: string;
-  showCloseBtn: boolean;
+  hideCloseBtn: boolean;
   duration?: number;
 };
 
@@ -14,9 +14,9 @@ export class EtoolsToast extends LitElement {
   render() {
     return html`
       <span id="label">${this.toastOptions?.text}</span>
-      ${this.toastOptions?.showCloseBtn
-        ? html`<paper-button @click="${() => this.closeToast()}">Ok</paper-button>`
-        : ''}
+      ${this.toastOptions?.hideCloseBtn
+        ? ''
+        : html`<paper-button @click="${() => this.closeToast()}">Ok</paper-button>`}
     `;
   }
 
