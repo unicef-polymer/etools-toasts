@@ -93,10 +93,13 @@ export class EtoolsToast extends LitElement {
           color: var(--primary-color);
           padding: 8px;
           min-width: 16px;
-          margin: 0 -8px 0 24px;
+          margin: 0;
+          margin-inline-start: 24px;
+          margin-inline-end: -8px;
         }
         :host(.toast-multi-line) paper-button {
-          margin: 0 -8px -8px 0;
+          margin: 0 0 -8px 0;
+          margin-inline-end: -8px;
           align-self: flex-end;
         }
         @keyframes show {
