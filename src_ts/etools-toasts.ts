@@ -47,9 +47,11 @@ export class EtoolsToasts extends LitElement {
   public showNext(event: CustomEvent<EtoolsToast>) {
     const toastElement: EtoolsToast = event.detail;
     const index = this.toastQueue.indexOf(toastElement.toastOptions);
-    this.toastQueue.splice(index, 1);
-    toastElement.remove();
-    this.requestUpdate();
+    if (index >= 0) {
+      this.toastQueue.splice(index, 1);
+      toastElement.remove();
+      this.requestUpdate();
+    }
   }
 
   static get styles(): CSSResultArray {
